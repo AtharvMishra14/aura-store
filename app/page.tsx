@@ -6,16 +6,19 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   const supabase = await createClient();
 
-  const { data: apps } = await supabase
+  // DIAGNOSTIC FETCH: We removed the 'is_published' filter to see if anything shows up
+  const { data: apps, error } = await supabase
     .from("apps")
     .select(`
       *,
       latestVersion:app_versions!latest_version_id(*)
     `)
-    //.eq("is_published", true)
     .order("created_at", { ascending: false });
 
-  // This just sends the data to the storefront. 
-  // Storefront.tsx already has the Prism Header inside it.
+  if (error) {
+    console.error("Supabase Error:", error.message);
+  }
+
+  // If this works, the apps will appear regardless of their 'published' status
   return <Storefront apps={apps || []} />;
 }
