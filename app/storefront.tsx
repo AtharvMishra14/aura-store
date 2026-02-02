@@ -38,11 +38,13 @@ export function Storefront({ apps }: { apps: AppWithVersion[] }) {
       <section className="relative overflow-hidden border-b border-zinc-800 px-4 py-20 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 to-transparent" />
         <div className="relative mx-auto max-w-7xl text-center">
+          {/* UPDATED: Name */}
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Welcome to Aura Store
+            Welcome to Prism Store
           </h1>
+          {/* UPDATED: Description to match the AI branding */}
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-400">
-            The Open App Market. Discover and download apps for Android and iOS.
+            The safest place to discover apps. Audited by Gemini AI.
           </p>
         </div>
       </section>
