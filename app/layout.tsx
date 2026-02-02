@@ -19,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* This body tag should ONLY contain {children}, no headers or navbars */}
       <body className={inter.className}>
+        {/* Only children here. No <nav> or <header> tags! */}
         {children}
       </body>
     </html>
