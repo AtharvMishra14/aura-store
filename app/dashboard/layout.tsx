@@ -56,4 +56,4 @@ export default async function DashboardLayout({
       </main>
     </div>
   );
-}
+} // Rebranding update to Prism Store - v2
