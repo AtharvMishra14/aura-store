@@ -12,7 +12,7 @@ export default async function Home() {
       *,
       latestVersion:app_versions!latest_version_id(*)
     `)
-    .eq("is_published", true)
+    //.eq("is_published", true)
     .order("created_at", { ascending: false });
 
   // This just sends the data to the storefront. 
