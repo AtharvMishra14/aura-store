@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image"; // Added Image import
 import { createClient } from "@/utils/supabase/server";
 import { DashboardNav } from "./dashboard-nav";
 import { LogOut } from "lucide-react";
@@ -22,8 +23,17 @@ export default async function DashboardLayout({
     <div className="min-h-screen bg-zinc-950">
       <aside className="fixed inset-y-0 left-0 z-40 w-64 border-r border-zinc-800 bg-zinc-900/50">
         <div className="flex h-16 items-center border-b border-zinc-800 px-6">
-          <Link href="/dashboard" className="text-lg font-semibold text-white">
-            Aura Store
+          {/* UPDATED: Logo and Name */}
+          <Link href="/dashboard" className="flex items-center gap-3 text-lg font-semibold text-white">
+            <div className="relative h-8 w-8 overflow-hidden rounded-md">
+              <Image 
+                src="/prism.png" 
+                alt="Prism Logo" 
+                fill 
+                className="object-cover" 
+              />
+            </div>
+            Prism Store
           </Link>
         </div>
         <DashboardNav />
