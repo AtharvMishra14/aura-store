@@ -27,7 +27,7 @@ export default async function DashboardLayout({
           <Link href="/dashboard" className="flex items-center gap-3 text-lg font-semibold text-white">
             <div className="relative h-8 w-8 overflow-hidden rounded-md">
               <Image 
-                src="/prism.png" 
+                src="/app-logo.png"
                 alt="Prism Logo" 
                 fill 
                 className="object-cover" 
